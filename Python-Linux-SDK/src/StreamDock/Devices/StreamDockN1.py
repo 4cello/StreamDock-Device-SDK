@@ -39,7 +39,7 @@ class StreamDockN1(StreamDock):
                 rotated_image = to_native_key_format(self, image)
             elif key in range(16, 19):
                 # second screen
-                rotated_image = to_native_seondscreen_format(self, image)
+                rotated_image = to_native_secondscreen_format(self, image)
             rotated_image.save("Temporary.jpg", "JPEG", subsampling=0, quality=90)
             returnvalue = self.transport.setKeyImgDualDevice(bytes("Temporary.jpg",'utf-8'), key)
             os.remove("Temporary.jpg")

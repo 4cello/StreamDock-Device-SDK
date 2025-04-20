@@ -62,7 +62,7 @@ if __name__ == "__main__":
             device.refresh()
         time.sleep(2)
         # 清除某个按键图标
-        device.cleaerIcon(3)
+        device.clearIcon(3)
         device.refresh()
         time.sleep(1)
         # 清除所有按键图标

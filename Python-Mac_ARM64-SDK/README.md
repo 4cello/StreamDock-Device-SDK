@@ -60,7 +60,7 @@ if __name__ == "__main__":
             device.refresh()
         time.sleep(2)
         # clear specialize key
-        device.cleaerIcon(3)
+        device.clearIcon(3)
         device.refresh()
         time.sleep(1)
         # clear all key

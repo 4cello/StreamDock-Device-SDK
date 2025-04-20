@@ -82,7 +82,7 @@ def create_scaled_touchscreen_image(dock, image, margins=[0, 0, 0, 0], backgroun
 def to_native_key_format(dock, image):
     return _to_native_format(image, dock.key_image_format())
 
-def to_native_seondscreen_format(dock, image):
+def to_native_secondscreen_format(dock, image):
     return _to_native_format(image, dock.secondscreen_image_format())
 
 def to_native_touchscreen_format(dock, image):

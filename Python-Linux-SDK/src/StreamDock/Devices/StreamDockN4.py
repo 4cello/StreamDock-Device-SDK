@@ -87,7 +87,7 @@ class StreamDockN4(StreamDock):
             
             # open formatter
             image = Image.open(path)
-            image = to_native_seondscreen_format(self, image)
+            image = to_native_secondscreen_format(self, image)
             temp_image_path = "rotated_key_image_" + str(random.randint(9999, 999999)) + ".jpg"
             image.save(temp_image_path)
 

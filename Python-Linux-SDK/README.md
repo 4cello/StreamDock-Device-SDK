@@ -61,16 +61,11 @@ if __name__ == "__main__":
     t = threading.Thread(target=manner.listen)
     t.daemon = True 
     t.start()
-    print("Found {} Stream Dock(s).
-".format(len(streamdocks)))
+    print("Found {} Stream Dock(s).".format(len(streamdocks)))
     for device in streamdocks:
         # open device
         device.open()
         device.init()
-        # new thread to get device's feedback
-        t = threading.Thread(target = device.whileread)
-        t.daemon = True
-        t.start()
         # set background image
         res = device.set_touchscreen_image("../img/YiFei320.png")
         device.refresh()
@@ -80,7 +75,7 @@ if __name__ == "__main__":
             device.refresh()
         time.sleep(2)
         # clear specialize key
-        device.cleaerIcon(3)
+        device.clearIcon(3)
         device.refresh()
         time.sleep(1)
         # clear all key
