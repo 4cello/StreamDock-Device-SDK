@@ -245,23 +245,20 @@ class StreamDock(ABC):
     def _read(self):
         while self.run_read_thread:
             try:
-                arr=self.read()
+                data=self.read()
+                arr = data[0]
                 if len(arr) >= 10:
                     if arr[9]==0xFF:
                         print("写入成功")
                     else:
-                        k = KEY_MAPPING[arr[9]]
-                        new = arr[10]
-                        if new == 0x02:
-                            new = 0
-                        if new == 0x01:
-                            new = 1
+                        _, _, _, keycode, new = data
                         if self.key_callback is not None:
-                            self.key_callback(self, k, new)
+                            self.key_callback(self, keycode, new)
                 # else:
                 #     print("read control", arr)
-                del arr
-            except Exception:
+                del data
+            except Exception as e:
+                print(f"Error during read: {e}")
                 self.run_read_thread = False
                 self.close()
         pass
